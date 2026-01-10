@@ -1,14 +1,14 @@
 /* Sweet Hollow Diner - Global Styles */
 :root {
-  --color-primary: #d94f4f;
-  --color-secondary: #f6d365;
-  --color-accent: #6c7fd8;
-  --color-bg: #fdfaf6;
+  --color-primary: #1f5fa8;
+  --color-secondary: #ff8a3d;
+  --color-accent: #0f2d52;
+  --color-bg: #f6f8fc;
   --color-surface: #ffffff;
-  --color-text: #1f1b1a;
-  --color-muted: #5f5956;
-  --color-border: #e5ded7;
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --color-text: #0f172a;
+  --color-muted: #4b5563;
+  --color-border: #e2e8f0;
+  --shadow-soft: 0 10px 30px rgba(15, 45, 82, 0.08);
   --radius: 16px;
   --max-width: 1200px;
 }
@@ -302,7 +302,7 @@ p {
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--color-border);
-  background: linear-gradient(135deg, rgba(217, 79, 79, 0.08), rgba(108, 127, 216, 0.05));
+  background: linear-gradient(135deg, rgba(31, 95, 168, 0.12), rgba(255, 138, 61, 0.08));
 }
 
 .hero-inner {
@@ -410,7 +410,7 @@ p {
 }
 
 .order-strip {
-  background: linear-gradient(135deg, rgba(217, 79, 79, 0.1), rgba(108, 127, 216, 0.1));
+  background: linear-gradient(135deg, rgba(31, 95, 168, 0.14), rgba(255, 138, 61, 0.12));
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 1.5rem;
