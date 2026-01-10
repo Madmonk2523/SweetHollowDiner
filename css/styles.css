@@ -38,7 +38,7 @@ body {
   margin: 0;
   font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   color: var(--color-text);
-  background: var(--color-bg);
+  background: linear-gradient(180deg, rgba(31, 95, 168, 0.14) 0%, rgba(15, 45, 82, 0.08) 40%, rgba(31, 95, 168, 0.06) 100%), var(--color-bg);
   line-height: 1.6;
 }
 
