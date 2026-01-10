@@ -1,14 +1,14 @@
 /* Sweet Hollow Diner - Global Styles */
 :root {
-  --color-primary: #1f5fa8;
-  --color-secondary: #ff8a3d;
+  --color-primary: #ff8a3d;
+  --color-secondary: #1f5fa8;
   --color-accent: #0f2d52;
-  --color-bg: #f6f8fc;
-  --color-surface: #ffffff;
-  --color-text: #0f172a;
-  --color-muted: #4b5563;
-  --color-border: #e2e8f0;
-  --shadow-soft: 0 10px 30px rgba(15, 45, 82, 0.08);
+  --color-bg: #0b1729;
+  --color-surface: #0f2138;
+  --color-text: #e8efff;
+  --color-muted: #9bb1cf;
+  --color-border: #1f3550;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.22);
   --radius: 16px;
   --max-width: 1200px;
 }
@@ -38,7 +38,10 @@ body {
   margin: 0;
   font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   color: var(--color-text);
-  background: linear-gradient(180deg, rgba(31, 95, 168, 0.14) 0%, rgba(15, 45, 82, 0.08) 40%, rgba(31, 95, 168, 0.06) 100%), var(--color-bg);
+  background: radial-gradient(circle at 20% 20%, rgba(255, 138, 61, 0.12), transparent 30%),
+    radial-gradient(circle at 80% 10%, rgba(31, 95, 168, 0.18), transparent 32%),
+    linear-gradient(180deg, rgba(12, 26, 45, 0.95) 0%, rgba(12, 26, 45, 0.9) 40%, rgba(18, 43, 69, 0.9) 100%),
+    var(--color-bg);
   line-height: 1.6;
 }
 
@@ -87,17 +90,16 @@ p {
   border-radius: 999px;
   border: 1px solid transparent;
   background: var(--color-primary);
-  color: #fff;
-  font-weight: 600;
+  color: #0b1729;
+  font-weight: 700;
   letter-spacing: 0.01em;
-  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, color 180ms ease;
   box-shadow: var(--shadow-soft);
 }
 
 .button.secondary {
-  background: #fff;
-  color: var(--color-text);
-  border-color: var(--color-border);
+  background: var(--color-secondary);
+  color: #e8efff;
 }
 
 .button.ghost {
@@ -123,7 +125,7 @@ p {
 }
 
 .card {
-  background: var(--color-surface);
+  background: rgba(15, 33, 56, 0.92);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 1.5rem;
@@ -149,10 +151,10 @@ p {
 
 .placeholder {
   width: 100%;
-  background: #f4f1ed;
-  border: 2px dashed #cfc7c0;
+  background: #102643;
+  border: 2px dashed #2f4b6c;
   border-radius: var(--radius);
-  color: var(--color-muted);
+  color: #c8d6ee;
   display: grid;
   place-items: center;
   font-weight: 600;
@@ -188,7 +190,7 @@ p {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(253, 250, 246, 0.94);
+  background: rgba(11, 23, 41, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
 }
@@ -221,7 +223,8 @@ p {
 
 .nav-links a:hover,
 .nav-links a:focus-visible {
-  background: var(--color-secondary);
+  background: rgba(255, 138, 61, 0.2);
+  color: #fff;
 }
 
 .nav-actions {
@@ -232,11 +235,12 @@ p {
 
 .hamburger {
   display: none;
-  background: #fff;
+  background: #0f2138;
   border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 0.6rem 0.75rem;
   font-size: 1.1rem;
+  color: var(--color-text);
   cursor: pointer;
 }
 
@@ -262,7 +266,7 @@ p {
 }
 
 .mobile-panel {
-  background: #fff;
+  background: #0f2138;
   border-left: 1px solid var(--color-border);
   transform: translateX(100%);
   transition: transform 240ms ease;
@@ -270,6 +274,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  color: var(--color-text);
 }
 
 .mobile-drawer.open {
@@ -302,7 +307,7 @@ p {
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--color-border);
-  background: linear-gradient(135deg, rgba(31, 95, 168, 0.12), rgba(255, 138, 61, 0.08));
+  background: linear-gradient(135deg, rgba(31, 95, 168, 0.35), rgba(255, 138, 61, 0.22));
 }
 
 .hero-inner {
@@ -396,7 +401,7 @@ p {
   padding: 0.9rem 1rem;
   border: 1px dashed var(--color-border);
   border-radius: 12px;
-  background: #fff;
+  background: #132743;
 }
 
 .menu-item h4 {
@@ -410,7 +415,7 @@ p {
 }
 
 .order-strip {
-  background: linear-gradient(135deg, rgba(31, 95, 168, 0.14), rgba(255, 138, 61, 0.12));
+  background: linear-gradient(135deg, rgba(31, 95, 168, 0.3), rgba(255, 138, 61, 0.24));
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 1.5rem;
@@ -442,7 +447,8 @@ p {
   padding: 0.9rem 1rem;
   border-radius: 12px;
   border: 1px solid var(--color-border);
-  background: #fff;
+  background: #0b1729;
+  color: var(--color-text);
   font-size: 1rem;
 }
 
@@ -470,7 +476,7 @@ p {
 
 .footer {
   border-top: 1px solid var(--color-border);
-  background: #fff;
+  background: #0f1e33;
   padding: 2rem 0 2.5rem;
   margin-top: 3rem;
 }
@@ -500,7 +506,8 @@ p {
   padding: 0.75rem;
   border-radius: 50%;
   border: 1px solid var(--color-border);
-  background: #fff;
+  background: #0f2138;
+  color: var(--color-text);
   box-shadow: var(--shadow-soft);
   cursor: pointer;
   opacity: 0;
