@@ -43,7 +43,7 @@
     }
   </script>
 </head>
-<body>
+<body class="page-about">
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="header">
     <div class="container navbar">
@@ -57,7 +57,7 @@
         <a href="contact.html">Contact</a>
       </nav>
       <div class="nav-actions">
-        <a class="button ghost" href="tel:+16315490768">📞 631-549-0768</a>
+        <button class="button ghost call-trigger" type="button" data-call-trigger>Call 631-549-0768</button>
         <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer" data-menu-toggle>☰</button>
       </div>
     </div>
@@ -77,6 +77,18 @@
     </div>
   </div>
 
+  <div class="call-modal" data-call-modal aria-hidden="true">
+    <div class="call-modal-overlay" data-call-overlay></div>
+    <div class="call-modal-panel" role="dialog" aria-modal="true" aria-labelledby="call-modal-title">
+      <h2 id="call-modal-title">Call Sweet Hollow Diner?</h2>
+      <p>Tap the button below to place the call.</p>
+      <div class="call-modal-actions">
+        <a class="button" href="tel:+16315490768">Call 631-549-0768</a>
+        <button class="button ghost" type="button" data-call-close>Cancel</button>
+      </div>
+    </div>
+  </div>
+
   <main id="main-content">
     <section class="section">
       <div class="container">
@@ -85,7 +97,6 @@
             <span class="badge">Our Story</span>
             <h1>Serving the Melville/Huntington area since 1977</h1>
           </div>
-          <a class="button" href="menu.html">View Menu</a>
         </div>
         <div class="auto-grid-2">
           <div class="card reveal">

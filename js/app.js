@@ -4,8 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const drawer = document.querySelector('[data-mobile-drawer]');
   const overlay = document.querySelector('[data-drawer-overlay]');
   const panel = document.querySelector('[data-drawer-panel]');
+  const callTrigger = document.querySelector('[data-call-trigger]');
+  const callModal = document.querySelector('[data-call-modal]');
+  const callOverlay = document.querySelector('[data-call-overlay]');
+  const callClose = document.querySelector('[data-call-close]');
   const backToTop = document.querySelector('[data-back-to-top]');
   let lastFocused = null;
+  let lastCallFocused = null;
 
   /* Hours lookup for "Today" card */
   const hours = {
@@ -89,11 +94,43 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.key === 'Escape' && drawer?.classList.contains('open')) {
       closeDrawer();
     }
+    if (event.key === 'Escape' && callModal?.classList.contains('open')) {
+      closeCallModal();
+    }
   });
 
   panel?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => closeDrawer());
   });
+
+  /* Call modal */
+  const getCallFocusable = () => {
+    if (!callModal) return [];
+    return Array.from(callModal.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])'))
+      .filter(el => !el.hasAttribute('disabled'));
+  };
+
+  const openCallModal = () => {
+    if (!callModal || !callTrigger) return;
+    lastCallFocused = document.activeElement;
+    callModal.classList.add('open');
+    callModal.setAttribute('aria-hidden', 'false');
+    const focusable = getCallFocusable();
+    (focusable[0] || callClose || callTrigger).focus();
+  };
+
+  const closeCallModal = () => {
+    if (!callModal) return;
+    callModal.classList.remove('open');
+    callModal.setAttribute('aria-hidden', 'true');
+    if (lastCallFocused) {
+      lastCallFocused.focus();
+    }
+  };
+
+  callTrigger?.addEventListener('click', () => openCallModal());
+  callOverlay?.addEventListener('click', () => closeCallModal());
+  callClose?.addEventListener('click', () => closeCallModal());
 
   /* Back to top button */
   const toggleBackToTop = () => {

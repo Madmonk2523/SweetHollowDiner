@@ -57,7 +57,7 @@
         <a href="contact.html">Contact</a>
       </nav>
       <div class="nav-actions">
-        <a class="button ghost" href="tel:+16315490768">📞 631-549-0768</a>
+        <button class="button ghost call-trigger" type="button" data-call-trigger>Call 631-549-0768</button>
         <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer" data-menu-toggle>☰</button>
       </div>
     </div>
@@ -77,6 +77,18 @@
     </div>
   </div>
 
+  <div class="call-modal" data-call-modal aria-hidden="true">
+    <div class="call-modal-overlay" data-call-overlay></div>
+    <div class="call-modal-panel" role="dialog" aria-modal="true" aria-labelledby="call-modal-title">
+      <h2 id="call-modal-title">Call Sweet Hollow Diner?</h2>
+      <p>Tap the button below to place the call.</p>
+      <div class="call-modal-actions">
+        <a class="button" href="tel:+16315490768">Call 631-549-0768</a>
+        <button class="button ghost" type="button" data-call-close>Cancel</button>
+      </div>
+    </div>
+  </div>
+
   <main id="main-content">
     <section class="section">
       <div class="container">
@@ -84,7 +96,7 @@
           <div>
             <span class="badge">Visit or reach out</span>
             <h1>Contact Sweet Hollow Diner</h1>
-            <p>We love hearing from our guests. Stop by, send a message, or connect with us online.</p>
+            <p>We love hearing from our guests. Stop by or call us on the phone!</p>
           </div>
           <a class="button" href="order.html">Order Online</a>
         </div>
@@ -110,25 +122,6 @@
           <div class="card reveal">
             <!-- STOREFRONT IMAGE PLACEHOLDER -->
             <img class="framed-image" src="storefront.webp" alt="Sweet Hollow Diner storefront" loading="lazy">
-          </div>
-          <div class="card reveal">
-            <h3>Send us a note</h3>
-            <div class="alert" data-contact-alert role="status"></div>
-            <form class="form" data-contact-form>
-              <div>
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" required aria-required="true">
-              </div>
-              <div>
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" required aria-required="true">
-              </div>
-              <div>
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required aria-required="true"></textarea>
-              </div>
-              <button class="button" type="submit">Send Message</button>
-            </form>
           </div>
         </div>
       </div>

@@ -303,13 +303,14 @@ p {
 }
 
 .logo {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   background: linear-gradient(135deg, #fff 0%, var(--color-primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -406,6 +407,57 @@ p {
   border-radius: 12px;
   font-weight: 700;
   border: 1px solid var(--color-border);
+}
+
+/* Call modal */
+.call-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1600;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.call-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity var(--transition-base) ease;
+}
+
+.call-modal-panel {
+  position: relative;
+  width: min(92vw, 420px);
+  background: #0f1f35;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(10px);
+  opacity: 0;
+  transition: opacity var(--transition-base) ease, transform var(--transition-base) ease;
+}
+
+.call-modal.open {
+  pointer-events: auto;
+}
+
+.call-modal.open .call-modal-overlay {
+  opacity: 1;
+}
+
+.call-modal.open .call-modal-panel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.call-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
 }
 
 /* Hero */
@@ -703,6 +755,11 @@ p {
   margin-top: 0.75rem;
 }
 
+.page-about .nav-actions .call-trigger {
+  padding: 0.5rem 0.85rem;
+  font-size: 0.85rem;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .nav-links {
@@ -720,6 +777,10 @@ p {
     flex-direction: column;
     align-items: flex-start;
   }
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 640px) {
@@ -730,6 +791,24 @@ p {
   .button {
     width: 100%;
     justify-content: center;
+  }
+  .nav-actions .button {
+    width: auto;
+  }
+  .navbar {
+    height: 64px;
+  }
+  .logo {
+    font-size: 1.1rem;
+  }
+  .section {
+    padding: 3.2rem 0;
+  }
+  .card {
+    padding: 1.4rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
   }
   .info-strip {
     margin-top: -1.5rem;
